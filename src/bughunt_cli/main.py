@@ -1,11 +1,13 @@
 import typer
-import os
+from rich import print
 from pathlib import Path
+from typing_extensions import Annotated
 
 app = typer.Typer()
 
+
 @app.command()
-def init(project_name: str):
+def init(project_name: Annotated[str, typer.Argument()]):
     """Initialize a new bughunting project."""
     base_dir = Path(project_name)
     base_dir.mkdir(parents=True, exist_ok=True)
@@ -16,7 +18,14 @@ def init(project_name: str):
     (base_dir / "report").mkdir(exist_ok=True)
     (base_dir / "dict").mkdir(exist_ok=True)
 
-    typer.echo(f"Initialized new bughunting project: {project_name}")
+    print(f"""Initialized new bughunting project: [bold green]\
+{project_name}[/bold green] :+1:""")
+
+
+@app.command(hidden=True)
+def dummy():
+    pass
+
 
 if __name__ == "__main__":
     app()

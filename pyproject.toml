@@ -25,3 +25,5 @@ allow-direct-references = true
 [tool.hatch.build.targets.wheel]
 packages = ["src/bughunt_cli"]
 
+[project.scripts]
+bughunt = "bughunt_cli.main:app"
