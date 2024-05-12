@@ -6,7 +6,7 @@ This command line tool supports bughunting projects.
 
 ```shell
 git clone git@github.com:howmuch515/bughunt-cli.git
-cd bughunt
+cd bughunt-cli
 ./install.sh
 ```
 
