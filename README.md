@@ -7,7 +7,8 @@ This command line tool supports bughunting projects.
 ```shell
 git clone git@github.com:howmuch515/bughunt-cli.git
 cd bughunt-cli
-./install.sh
+rye build
+rye install --path ./dist/bughunt_cli-*-py3-none-any.whl
 ```
 
 ## usage
