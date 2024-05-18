@@ -1,0 +1,2 @@
+[scan]
+command = "subfinder -o ./scan/subfinder_result.txt -d {domain_name}"
