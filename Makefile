@@ -6,13 +6,13 @@ install:
 	rye sync && rye build && rye install --path ./dist/*.whl $(PROJECT_NAME)
 
 lint:
-	flake8 src/
+	rye run flake8 src/
 
 test:
-	pytest tests/
+	rye run pytest tests/
 
 format:
-	black src/ tests/
+	rye run black src/ tests/
 
 clean:
 	rye uninstall $(PROJECT_NAME)
