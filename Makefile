@@ -7,6 +7,7 @@ install:
 
 lint:
 	flake8 src/
+	actionlint .github/workflows/*.yml
 
 test:
 	pytest tests/

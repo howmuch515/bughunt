@@ -1,0 +1,29 @@
+name: CI
+
+on:
+  push:
+    branches:
+      - main
+  pull_request:
+    branches:
+      - main
+
+jobs:
+  lint:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v3
+
+      - name: Install the latest version of rye
+        uses: eifinger/setup-rye@v3
+          
+      - name: Install
+        run: make install
+
+      - name: Lint
+        run: make lint
+
+      - name: Test
+        run: make test
