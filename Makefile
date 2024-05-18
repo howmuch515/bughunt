@@ -5,13 +5,15 @@ PROJECT_NAME = bughunt-cli
 install:
 	rye sync && rye build && rye install --path ./dist/*.whl $(PROJECT_NAME)
 
+reinstall: clean install
+	
 lint:
 	rye run flake8 src/
 
 test:
 	rye run pytest tests/
 
-format:
+fmt:
 	rye run black src/ tests/
 
 clean:
