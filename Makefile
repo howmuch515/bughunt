@@ -8,13 +8,13 @@ install:
 reinstall: clean install
 	
 lint:
-	rye run flake8 src/
+	rye run ruff check
 
 test:
 	rye run pytest tests/
 
 fmt:
-	rye run black src/ tests/
+	rye run ruff format
 
 clean:
 	rye uninstall $(PROJECT_NAME)
