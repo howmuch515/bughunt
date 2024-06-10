@@ -1,5 +1,7 @@
 # bughunt-cli
 
+![main branch parameter](https://github.com/howmuch515/bughunt-cli/actions/workflows/main.yaml/badge.svg?branch=main)
+
 This command line tool supports bughunting projects.
 
 ## install
